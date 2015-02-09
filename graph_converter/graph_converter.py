@@ -44,6 +44,9 @@ class Converter:
             with open(input, "r") as in_stream:
                 i = 0
                 for line in in_stream:
+                    if line.strip().startswith("c"):
+                        continue
+
                     if i == 0:
                         self.read_first_line(line)
                         o_stream.write(self.generate_start_lines(line))
@@ -103,7 +106,7 @@ if __name__ == '__main__':
         converter = CNFConverter()
 
     input = args.input_file
-    filename = os.path.splitext(input)
+    filename = os.path.splitext(os.path.basename(input))
     output = os.path.join(args.destination_folder, filename[0] + converter.extension())
 
     converter.convert(input, output)
