@@ -8,3 +8,5 @@
 /tmp
 # Ignore JetBrains's Project Folder
 /.idea
+# Ignore backup files
+*.*~
