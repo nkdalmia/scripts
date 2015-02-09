@@ -7,6 +7,6 @@
 /log/*.log
 /tmp
 # Ignore JetBrains's Project Folder
-/.idea
+**/.idea
 # Ignore backup files
 *.*~
